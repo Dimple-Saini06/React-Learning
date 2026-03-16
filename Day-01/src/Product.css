@@ -1,0 +1,8 @@
+.Product {
+    color : red;
+    border : 1px solid white;
+    width : 50%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
