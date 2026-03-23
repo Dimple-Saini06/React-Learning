@@ -1,0 +1,8 @@
+.styling {
+    margin : auto;
+    height : 200px;
+    width : 50%;
+    border :2px solid black;
+    margin-top: 20px;
+    text-align: center;
+}
