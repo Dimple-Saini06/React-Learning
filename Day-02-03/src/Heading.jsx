@@ -1,8 +1,11 @@
 function Heading (){
+    let styles = {
+        textAlign : "center",
+    }
     return (
-        <h1>
+        <h2 style={styles}>
             Blockbuster Deals on Computer Accessories | Shop Now
-        </h1>
+        </h2>
     );
 };
     

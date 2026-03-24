@@ -1,0 +1,11 @@
+.styling {
+    /* margin : auto; */
+    height : 165px;
+    width : 250px;
+    border :2px solid black;
+    margin-top: 20px;
+    margin-left : 15px;
+    text-align: center;
+    border-radius: 14px;
+    /* padding : 0 10px 0 10px; */
+}
