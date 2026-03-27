@@ -11,8 +11,8 @@ function App() {
       {/* <h1>Handling Click or Non-Click Event</h1>
       <Button />
       <Form /> */}
-      {/* <Counter /> */}
-      <LikeButton />
+      <Counter />
+      {/* <LikeButton /> */}
     </>
   )
 }
