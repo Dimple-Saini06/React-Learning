@@ -2,11 +2,11 @@ import {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function TodoList() {
-    let[todos, setTodos] = useState([{task:"sample Task", id:uuidv4()}]);
+    let[todos, setTodos] = useState([{task:"sample Task", id:uuidv4(), isDone:false}]);
     let[newTodo, setNewTodo] = useState("");
 
     function addNewTask() {
-        setTodos([...todos, {task:newTodo, id:uuidv4()}]);
+        setTodos([...todos, {task:newTodo, id:uuidv4(), isDone : false}]);+
         setNewTodo("");
     }
 
@@ -17,6 +17,7 @@ export default function TodoList() {
     function deleteTodo(id){
         setTodos((prevTodo) => todos.filter((prevTodo) => prevTodo.id != id));
     }
+    
 
     function updateAll(){
         setTodos(
@@ -43,6 +44,17 @@ export default function TodoList() {
             })
         )
     }
+
+    function doneMark(){
+        setTodos(
+           todos.map((todo)=>{
+                return {
+                    ...todo,
+                    isDone : true,
+                };
+            })
+        );
+    }
     return(
         <div>
             
@@ -55,11 +67,14 @@ export default function TodoList() {
                 {
                     todos.map((todo)=>(
                         <li key={todo.id}>
-                            <span>{todo.task}</span>
+                            <span style={todo.isDone ? {textDecorationLine:"line-through"} : {}}>{todo.task}</span>
                             &nbsp;
                             <button onClick={()=>deleteTodo(todo.id)}>Delete</button>
                             &nbsp;
                             <button onClick={()=>upperCaseOne(todo.id)}>UpperCase One</button>
+                            &nbsp; 
+                            <button onClick={()=>doneMark()}>Done</button>
+
                         </li>
                     ))
                 }
