@@ -6,7 +6,7 @@ export default function TodoList() {
     let[newTodo, setNewTodo] = useState("");
 
     function addNewTask() {
-        setTodos([...todos, {task:newTodo, id:uuidv4(), isDone : false}]);+
+        setTodos([...todos, {task:newTodo, id:uuidv4(), isDone : false}]);
         setNewTodo("");
     }
 
