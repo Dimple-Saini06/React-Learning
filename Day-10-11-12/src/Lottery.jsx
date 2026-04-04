@@ -3,7 +3,7 @@ import './Lottery.css'
 import { genTicket, sum } from './helper.js'
 import Ticket from './Ticket.jsx'
 
-export default function Lottery({n=3, winningSum=15}) {
+export default function Lottery({n=3, winCondition}) {
     // let [random, setRandom] = useState(Math.floor(Math.random() * 900) + 100);
     // let [result, setResult] = useState("Lottery");
 
@@ -45,7 +45,7 @@ export default function Lottery({n=3, winningSum=15}) {
     // let isWinning = sum(ticket) === 15;
 
     let [ticket, setTicket] = useState(genTicket(n));
-    let isWinning = sum(ticket) === winningSum;
+    let isWinning = winCondition(ticket);
 
     let buyTicket = () => {
         setTicket(genTicket(n));
